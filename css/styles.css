@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Poppins:ital,wght@1,900&family=Titillium+Web:wght@700&display=swap');
+
+*{
+    margin: 0; /* aquí reseto la margen a cero*/
+    box-sizing: border-box; /*https://www.youtube.com/watch?v=Vx854s9YE78 */
+}
+
+body{
+    font-family: 'Titillium Web', sans-serif; /*fuente de texto del documento :) */ 
+    padding: 90px 20px 0; /*acoplan un espacio natural, nuestro contenido debajo de nuestro menú*/
+}
+
+.header{
+    background-color: rgb(255, 255, 255); /*asignar un color a la barra de navegación y 
+    una opacidad */
+    height: 80px; /* altura de la barra de navegación */
+    position: fixed;/*mantener firme el contenido y que no se mezcle con la barra de navegación */
+    width: 100%; /* poner un ancho del 100*/
+    top: 0; /* Estas dos fijan la posición de nuestra ventana para que el nav
+    siempre se mantenga en el mismo lugar */
+    left: 0;
+    box-shadow: 2px 2px 6px rgba(177, 177, 177, 0.363);
+}   
+
+.nav{
+    display: flex; /*Alinear que nuestros elementos esten para la derecha */
+    justify-content: space-between; /*Alinear que nuestro logo esté para la izquierda*/
+    
+
+    max-width: 992px; /*Adaptar el tamaño a dispositivos amplios pero moviles*/
+    margin: 0 auto; /*centrar los elementos */
+}
+
+.nav-link {
+    color: rgb(0, 0, 0); /*asignar un color al texto de nav*/
+    text-decoration: none; /*quitar el efecto de link*/
+}
+
+.logo {
+    padding: 0 40px; /*mover un poco el logo hacía la derecha */
+    line-height: 40px; /*centramos la imagen */
+    font-size: 30px; /*tamano de la fuente */
+    font-weight: bold; /*para hacer mas fuerte el texto*/
+    padding: 0 40px; /*distancia entre el texto y la barra de navegacion*/
+    line-height: 80px; /*centrar texto */
+}
+
+.nav-menu {
+    display: flex; /*elementos en forma horizontal*/
+    margin-right: 40px; /* separar un poco de la derecha*/
+    list-style: none; /*eliminar los puntitos*/
+}
+
+.nav-menu-item{
+    font-size: 18px; /*asignar el tamaño de la fuente de texto*/
+    margin: 0 10px; /*asignar una distancia entre el espaciado de cada texto*/
+    line-height: 80px; /*centrar el texto*/
+    text-transform: uppercase;
+    width: max-content; /*no cortar contenido al momento de adaptar con el celular */
+}
+
+.nav-menu-link{
+    padding: 8px 12px; /*tamaño del sombreado del texto seleccionado*/
+    border-radius: 5px; /*un efecto redondo sobre el sombreado*/
+}
+.nav-menu-link:hover,
+.nav-menu-link-active {
+   background-color:  rgba(255, 136, 0, 0.76); /*sobrear letra al momento de pasar el mouse sobre ellas */
+   transition: 0.5s; /*hacer una transición al efecto de medio segundo*/
+}
+
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.nav-toggle{
+    color: rgb(0, 0, 0); /*asignar color al botón*/
+    background: none; /*eliminar fondo del botón*/
+    border: none; /*quitar el borde del botón*/
+    font-size: 30px; /*asignar el tamaño de la fuente*/
+    padding: 0 20px; /*distancia entre los textos y la barra de navegación*/
+    line-height: 60px; /*establece distancia entre la linea de texto en dispositivos moviles*/
+    
+    display: none; /*que no se vea cuando está en dispositivo de escritorio*/
+    cursor: pointer;
+}
+
+@media (max-width: 768px){ /*cuando nuestro dispositivo tengo menos de 768px se adaptará de esta manera */
+    body{
+        padding: 70px; /*acoplan un espacio natural, nuestro contenido debajo de nuestro menú*/
+    }
+    .header{
+        height: 60px; /* altura de la barra de navegación */
+
+    }   
+    .logo {
+        font-size: 25px; /*tamano de la fuente */
+
+        padding: 0 20px; /*distancia entre el texto y la barra de navegacion*/
+        line-height: 60px; /*centrar texto */
+    }
+    
+    .nav-menu {
+        flex-direction: column; /*elementos en forma vertical*/
+        align-items: center; /*centrar elementos*/
+        margin-right: 20px; /* separar un poco de la derecha*/
+        background-color: rgb(253, 180, 69); /*asignar un color de fondo*/
+        /*asignar que la posición no dependa de donde se encuentre
+        __________________________________________________________*/
+        position: fixed; /*alinear la posición del elemento*/
+        left: 0;
+        top: 60px; /*alto de mi elemento*/
+        width: 100%; /*ancho de mi elemento*/
+        padding: 20px 0; /*20px es hacía arriba y abajo y 0 para eliminar el padding para que el elemento esté completo en la izquierda*/
+
+        height: calc(100%  60px);
+        overflow: auto; /*agregar barra de scrool cuando esté demasiado pequeño la ventana*/
+        
+        left:100% ; /*va estar 100 hacía la derecha*/
+        transition: left 0.3s; /*una transición*/
+    }
+    
+    .nav-menu-item{     
+        line-height: 70px; /*centrar el texto*/
+    }
+    
+    .nav-menu-link:hover,
+    .nav-menu-link-active {
+       background-color:  rgba(250, 250, 250, 0.685); /*sobrear letra al momento de pasar el mouse sobre ellas */
+       transition: 0.5s; /*hacer una transición al efecto de medio segundo*/
+    }
+    
+    .nav-toggle{
+        display: block; /*acomodar el icono a la derecha*/
+    }
+    
+    .nav-menu_visible{
+        left: 0; /*asignamos que cuando el menú esté desactivado va volver a la normalidad osea desaparecer*/
+    }
+
+    img{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+/*__________________________BANNER_________________________________*/
+.text{
+    padding:40px;
+    background:#eee;
+}
+
+.text h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    padding:10px;
+}
+
+.banner-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-container .banner{
+    background:linear-gradient(-55deg, #fc9700 29%, #fac043 29.1%, #fa7900 68%, #ffaf01 68.1%);
+    border-radius: 5px;
+    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0 5px 10px #0005;
+    overflow: hidden;
+}
+
+.banner-container .banner .shoe{
+    flex:1 1 250px;
+    padding:15px;
+    text-align: center;
+}
+
+.banner-container .banner .shoe img{
+    width:80%;
+}
+
+.banner-container .banner .content{
+    flex:1 1 250px;
+    text-align: center;
+    padding:10px;
+    text-transform: uppercase;
+}
+
+.banner-container .banner .content span{
+    color:#eee;
+    font-size: 25px;
+}
+
+.banner-container .banner .content h3{
+    color:#fff;
+    font-size: 40px;
+}
+
+.banner-container .banner .content p{
+    color:#eee;
+    font-size: 20px;
+    padding:10px 0;
+}
+
+.banner-container .banner .content .btn{
+    display: block;
+    height:40px;
+    width:150px;
+    line-height: 40px;
+    background: #fff;
+    color:#d63031;
+    margin:5px auto;
+    text-decoration: none;
+}
+
+/*__________________________FINALIZA LA BANNER____________________*/
+
+/*__________________________GALERIA IMAGENES________________________*/
+.galeria  {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-height: 100vh;
+    padding: 12px;   
+}
+.galeria .ceos img {
+    width: 180px;
+    height: 160px;
+    max-width:max-content;    
+}
+
+.circule img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: solid;
+    border-color: rgba(255, 136, 0, 0.568);
+}
+
+.tarjeta1 {
+    margin: 20px auto;
+}
+
+.desarrolladores{
+    margin-top: 50px;
+    text-align: center;
+    color: #fc9700;
+    text-shadow: 2px -4px 5px rgba(0, 0, 0, 0.205);
+}
+
+.decoration{
+    color: #fc9700;
+    text-decoration: none; 
+    text-shadow: 2px -3px 7px rgba(0, 0, 0, 0.418);
+}
+.block-galeria a{
+    text-decoration: none;
+}
+/* _________________________________________________________________*/
+
+/* _______________________QUIENES SOMOS ___________________________________*/
+.text-qn{
+    margin-top: 50px;
+    text-align: center;
+    color: #fc9700;
+    text-shadow: 2px -4px 5px rgba(0, 0, 0, 0.205);
+}
+.text-qn p{
+    color: #9b9b9b;
+    padding: 80px;
+    text-align: justify;
+}
+.bloque-uno .text-qn .qn-tittle{
+    color: #fc9700;
+}
+
+
+/* _________________________________________________________________*/
+.bloque-uno .block-valores{
+    background-color: #f3f1f1;
+    text-align: center;
+    box-shadow: 2px -3px 10px hsla(0, 0%, 0%, 0.123);
+    margin-bottom: 100px;
+}
+
+.bloque-uno .block-valores h1{
+    color: rgb(57, 185, 57);
+    font-size: 50px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.bloque-uno .block-valores ul li{
+    list-style: none;
+    padding: 20px;
+    color: rgb(58, 58, 58);
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.bloque-uno .block-valores ul li img{
+    text-align: center;
+    width: 5%;
+    padding: 0 20px;
+}
+
+/*__________________________FOOTER_____________________________________*/
+footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    display: flex; /*elementos en forma horizontal*/
+    padding: 40px;
+}
